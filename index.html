@@ -567,83 +567,60 @@
     </div>
   </section>
 
-  <!-- 6 TEAM (4 people incl. 김씨) -->
-  <section class="scene chapter" id="s-team" data-dur="8800">
-    <div class="caselabel">PART 1 — 팀 소집 · 밤샘 회의</div>
-    <div class="stageart">
-      <svg viewBox="0 0 620 480" width="min(78vw,600px)">
-        <defs>
-          <radialGradient id="deskGlow" cx="50%" cy="50%" r="60%">
-            <stop offset="0" stop-color="#e8b04b" stop-opacity=".28"/>
-            <stop offset="1" stop-color="#e8b04b" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <!-- ambient floor glow -->
-        <ellipse cx="310" cy="248" rx="230" ry="180" fill="url(#deskGlow)"/>
-        <!-- round meeting table (top-down) -->
-        <ellipse cx="310" cy="248" rx="120" ry="92" fill="#0c1119" stroke="#243441" stroke-width="2"/>
-        <ellipse cx="310" cy="248" rx="120" ry="92" fill="none" stroke="#33566b" stroke-width="1" opacity=".5"/>
-        <!-- central case file on the desk -->
-        <g transform="translate(310,248)">
-          <ellipse class="huddle-pulse" cx="0" cy="2" rx="52" ry="40" fill="#e8b04b"/>
-          <rect x="-34" y="-24" width="68" height="48" rx="3" fill="#12161d" stroke="#e8b04b" stroke-width="1.6" transform="rotate(-6)"/>
-          <line x1="-24" y1="-8" x2="22" y2="-8" stroke="#e8b04b" stroke-width="1.4" opacity=".6" transform="rotate(-6)"/>
-          <line x1="-24" y1="0" x2="14" y2="0" stroke="#e8b04b" stroke-width="1.4" opacity=".4" transform="rotate(-6)"/>
-          <line x1="-24" y1="8" x2="18" y2="8" stroke="#e8b04b" stroke-width="1.4" opacity=".3" transform="rotate(-6)"/>
-          <text y="34" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#e8b04b" letter-spacing="1">CASE · 세인트폴</text>
-        </g>
+ <section class="scene chapter" id="s-team" data-dur="8800">
+  <div class="caselabel">PART 1 — 팀 소집 · 밤샘 회의</div>
+  <div class="stageart">
+    <svg viewBox="0 0 620 480" width="min(78vw,600px)">
+      <defs>
+        <radialGradient id="deskGlow" cx="50%" cy="50%" r="60%">
+          <stop offset="0" stop-color="#e8b04b" stop-opacity=".15"/> <stop offset="1" stop-color="#e8b04b" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="peopleGlow" cx="50%" cy="50%" r="70%">
+          <stop offset="0" stop-color="#fff" stop-opacity=".12"/>
+          <stop offset="1" stop-color="#e8b04b" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      
+      <g opacity=".8">
+        <ellipse cx="310" cy="116" rx="60" ry="60" fill="url(#peopleGlow)"/> <ellipse cx="310" cy="380" rx="60" ry="60" fill="url(#peopleGlow)"/> <ellipse cx="116" cy="248" rx="60" ry="60" fill="url(#peopleGlow)"/> <ellipse cx="504" cy="248" rx="60" ry="60" fill="url(#peopleGlow)"/> </g>
 
-        <!-- ===== 4 heads facing inward (top-down), N / E / S / W ===== -->
-        <!-- NORTH (나 씨) head at top, chin toward desk = facing down -->
-        <g class="team-el tN" transform="translate(310,96)">
-          <ellipse cx="0" cy="0" rx="30" ry="34" fill="#0e141c"/>
-          <path d="M-24,10 a30,34 0 0,0 48,0" fill="none" stroke="#6fa8c7" stroke-width="2.4" opacity=".6"/>
-          <path d="M-14,26 q14,10 28,0" fill="none" stroke="#6fa8c7" stroke-width="1.6" opacity=".4"/>
-          <!-- shoulders below head -->
-          <path d="M-40,50 Q0,20 40,50 L40,64 L-40,64 Z" fill="#0e141c"/>
-        </g>
-        <!-- SOUTH (박 씨) head at bottom, facing up -->
-        <g class="team-el tS" transform="translate(310,400)">
-          <ellipse cx="0" cy="0" rx="30" ry="34" fill="#0e141c"/>
-          <path d="M-24,-10 a30,34 0 0,1 48,0" fill="none" stroke="#6fa8c7" stroke-width="2.4" opacity=".6"/>
-          <path d="M-14,-26 q14,-10 28,0" fill="none" stroke="#6fa8c7" stroke-width="1.6" opacity=".4"/>
-          <path d="M-40,-50 Q0,-20 40,-50 L40,-64 L-40,-64 Z" fill="#0e141c"/>
-        </g>
-        <!-- WEST (정 씨) head at left, facing right -->
-        <g class="team-el tW" transform="translate(96,248)">
-          <ellipse cx="0" cy="0" rx="34" ry="30" fill="#0e141c"/>
-          <path d="M10,-24 a34,30 0 0,1 0,48" fill="none" stroke="#6fa8c7" stroke-width="2.4" opacity=".6"/>
-          <path d="M26,-14 q10,14 0,28" fill="none" stroke="#6fa8c7" stroke-width="1.6" opacity=".4"/>
-          <path d="M-50,-40 Q-20,0 -50,40 L-64,40 L-64,-40 Z" fill="#0e141c"/>
-        </g>
-        <!-- EAST (김 씨 — amber lead) head at right, facing left -->
-        <g class="team-el tE" transform="translate(524,248)">
-          <ellipse cx="0" cy="0" rx="34" ry="30" fill="#141002"/>
-          <path d="M-10,-24 a34,30 0 0,0 0,48" fill="none" stroke="#e8b04b" stroke-width="2.6" opacity=".75"/>
-          <path d="M-26,-14 q-10,14 0,28" fill="none" stroke="#e8b04b" stroke-width="1.6" opacity=".5"/>
-          <path d="M50,-40 Q20,0 50,40 L64,40 L64,-40 Z" fill="#141002"/>
-        </g>
+      <ellipse cx="310" cy="248" rx="140" ry="108" fill="#12161d" stroke="#33566b" stroke-width="1.8"/> <rect x="270" y="210" width="80" height="76" rx="4" fill="#0e141c" stroke="#e8b04b" stroke-width="2" transform="rotate(-4 310 248)"/> <text x="310" y="258" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#e8b04b" letter-spacing="1">CASE</text>
 
-        <!-- floating whisper cues around the huddle -->
-        <text class="wcue wc1" x="200" y="150" font-size="15">소근소근…</text>
-        <text class="wcue wc2" x="430" y="160" font-size="14">…음?</text>
-        <text class="wcue wc3" x="180" y="350" font-size="15">소곤…</text>
-        <text class="wcue wc4" x="420" y="352" font-size="14">…맞아.</text>
+      <g transform="translate(310,96)">
+        <ellipse cx="0" cy="0" rx="36" ry="36" fill="#0e141c" stroke="#6fa8c7" stroke-width="2.5"/> <path d="M-18,30 Q18,45 18,30" fill="none" stroke="#6fa8c7" stroke-width="2" opacity=".6"/> </g>
+      <g transform="translate(310,400)">
+        <ellipse cx="0" cy="0" rx="36" ry="36" fill="#0e141c" stroke="#6fa8c7" stroke-width="2.5"/>
+        <path d="M-18,-30 Q18,-45 18,-30" fill="none" stroke="#6fa8c7" stroke-width="2" opacity=".6"/>
+      </g>
+      <g transform="translate(96,248)">
+        <ellipse cx="0" cy="0" rx="36" ry="36" fill="#0e141c" stroke="#6fa8c7" stroke-width="2.5"/>
+        <path d="M30,-18 Q45,18 30,18" fill="none" stroke="#6fa8c7" stroke-width="2" opacity=".6"/>
+      </g>
+      <g transform="translate(524,248)">
+        <ellipse cx="0" cy="0" rx="36" ry="36" fill="#141002" stroke="#e8b04b" stroke-width="2.8"/>
+        <path d="M-30,-18 Q-45,18 -30,18" fill="none" stroke="#e8b04b" stroke-width="2.2" opacity=".7"/>
+      </g>
 
-        <!-- name tags -->
-        <g font-family="var(--display)" text-anchor="middle" font-size="14">
-          <text x="310" y="44" fill="#6fa8c7">나 씨</text>
-          <text x="310" y="460" fill="#6fa8c7">박 씨</text>
-          <text x="96" y="316" fill="#6fa8c7">정 씨</text>
-          <text x="524" y="316" fill="#e8b04b">김 씨</text>
-        </g>
-      </svg>
-    </div>
-    <div class="subs">
-      <p class="d1">김씨는 나씨, 정씨, 박씨에게 이 케이스를 <span class="hlc">조용히 공유합니다.</span></p>
-      <p class="d2">책상을 가운데 두고 머리를 맞댄 네 사람 — <span class="hl">소근소근,</span> 추가 조사에 착수합니다.</p>
-    </div>
-  </section>
+      <g font-size="16" opacity=".5">
+        <text x="210" y="170">소근소근…</text>
+        <text x="440" y="180">…음?</text>
+        <text x="190" y="330">소곤…</text>
+        <text x="430" y="332">…맞아.</text>
+      </g>
+
+      <g font-family="JetBrains Mono" text-anchor="middle" font-size="15">
+        <text x="310" y="44" fill="#6fa8c7">나 씨</text>
+        <text x="310" y="460" fill="#6fa8c7">박 씨</text>
+        <text x="96" y="324" fill="#6fa8c7">정 씨</text>
+        <text x="524" y="324" fill="#e8b04b">김 씨</text>
+      </g>
+    </svg>
+  </div>
+  <div class="subs">
+    <p class="d1">김씨는 나씨, 정씨, 박씨에게 이 케이스를 <span class="hlc">조용히 공유합니다.</span></p>
+    <p class="d2">책상을 가운데 두고 머리를 맞댄 네 사람 — <span class="hl">소근소근,</span> 추가 조사에 착수합니다.</p>
+  </div>
+</section>
 
   <!-- 7 WHAT-1 scale -->
   <section class="scene chapter" id="s-what1" data-dur="7800">
