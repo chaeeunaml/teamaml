@@ -127,10 +127,26 @@
   .hotbox{opacity:0}.is-active .hotbox{animation:hotpulse 2.6s ease infinite}
   @keyframes hotpulse{0%,100%{opacity:0}40%,60%{opacity:.9}}
 
-  /* settle subtitles in the lower band (mid-point of prior positions) */
+  /* subtitle vertical position: default fallback, then measured per-slide so the
+     gap between each slide's own content and its subtitle is consistently
+     small (~one line) instead of a fixed distance from the screen edge that
+     leaves huge gaps on short-content slides and risks overlap on tall ones */
   .subs{bottom:14.5vh}
-  /* pages 10-13: songdo, cayman, ofac, global */
-  #s-songdo .subs,#s-cayman .subs,#s-ofac .subs,#s-global .subs{bottom:9.5vh}
+  #s-mon .subs{bottom:15.7vh}
+  #s-flow .subs{bottom:15.4vh}
+  #s-cretop .subs{bottom:11.8vh}
+  #s-fix .subs{bottom:31.3vh}
+  #s-team .subs{bottom:11.8vh}
+  #s-what1 .subs{bottom:29.5vh}
+  #s-what2 .subs{bottom:21.9vh}
+  #s-songdo .subs{bottom:3.9vh}
+  #s-cayman .subs{bottom:6.9vh}
+  #s-ofac .subs{bottom:4.6vh}
+  #s-global .subs{bottom:6.9vh}
+  #s-caseflow .subs{bottom:15.4vh}
+  #s-newslide .subs{bottom:17.7vh}
+  #s-related .subs{bottom:11.8vh}
+  #s-kogrid .subs{bottom:14.8vh}
   /* these slides sit bright screenshot images right above the subtitle —
      give the text its own dark plate so it never washes out against them */
   #s-songdo .subs p,#s-cayman .subs p,#s-ofac .subs p,#s-global .subs p{
@@ -242,17 +258,17 @@
   .is-active .stat-vs{animation:fadeIn 1s ease .9s forwards}
 
   /* ---- comparison ---- */
-  .cmp{display:flex;flex-direction:column;gap:8px;width:min(94vw,900px)}
-  .cmp-head,.cmp-row{display:grid;grid-template-columns:1fr 132px 1fr;align-items:center}
-  .cmp-head span{font-family:var(--display);font-size:clamp(15px,2vw,22px);padding:6px 16px}
+  .cmp{display:flex;flex-direction:column;gap:11px;width:min(96vw,1060px)}
+  .cmp-head,.cmp-row{display:grid;grid-template-columns:1fr 152px 1fr;align-items:center}
+  .cmp-head span{font-family:var(--display);font-size:clamp(17px,2.3vw,26px);padding:6px 16px}
   .cmp-head .bad{color:var(--amber);text-align:right}.cmp-head .good{color:var(--cyan);text-align:left}
   .cmp-row{opacity:0;transform:translateY(12px)}
   .is-active .cmp-row{animation:subIn .8s ease forwards}
   .is-active .cm1{animation-delay:.6s}.is-active .cm2{animation-delay:1.3s}
   .is-active .cm3{animation-delay:2.0s}.is-active .cm4{animation-delay:2.7s}
-  .cmp-row .bad,.cmp-row .good{font-family:var(--serif);font-size:clamp(12px,1.5vw,17px);line-height:1.4;padding:12px 16px}
+  .cmp-row .bad,.cmp-row .good{font-family:var(--serif);font-size:clamp(14px,1.75vw,20px);line-height:1.45;padding:15px 20px}
   .cmp-row .bad{color:#e7edf3;text-align:right}.cmp-row .good{color:var(--muted);text-align:left}
-  .cmp-mid{font-family:var(--mono);font-size:clamp(10px,1.2vw,13px);color:var(--cyan-dim);text-align:center;letter-spacing:.08em}
+  .cmp-mid{font-family:var(--mono);font-size:clamp(11px,1.35vw,15px);color:var(--cyan-dim);text-align:center;letter-spacing:.08em}
 
   /* ---- chain (2x2 zigzag) ---- */
   .chain{display:grid;grid-template-columns:1fr auto 1fr;grid-template-rows:auto auto auto;
@@ -667,7 +683,7 @@
   </section>
 
   <!-- 5 FIXATION -->
-  <section class="scene" id="s-fix" data-dur="9200">
+  <section class="scene" id="s-fix" data-dur="7360">
     <div class="stageart" style="flex-direction:column">
       <div style="position:relative"><span class="fix-mark"></span><span class="fix-word marked">국제학교</span></div>
       <div class="fix-tag"> 그런데, 학교가 <b>법인·주식회사</b>로 등록
@@ -713,7 +729,7 @@
         <path d="M-30,-18 Q-45,18 -30,18" fill="none" stroke="#e8b04b" stroke-width="2.2" opacity=".7"/>
       </g>
 
-      <g font-size="16" opacity=".5">
+      <g font-size="16" fill="#fff" opacity=".85">
         <text x="210" y="170">소근소근…</text>
         <text x="440" y="180">…음?</text>
         <text x="190" y="330">소곤…</text>
@@ -759,7 +775,7 @@
         <div class="cmp-row cm4"><span class="bad">실소유자(UBO) 파악 어려움</span><span class="cmp-mid">지배구조</span><span class="good">법인·임원 공시</span></div>
       </div>
     </div>
-    <div class="subs"><p class="d2">막대한 교육비를 받으면서도 교육청의 감독 밖 <br> — 그 돈의 <span class="hl">출처도, 흐름도, 무결성도</span> 확인할 수 없습니다.</p></div>
+    <div class="subs"><p class="d1">막대한 교육비를 받으면서도 교육청의 감독 밖 <br> — 그 돈의 <span class="hl">출처도, 흐름도, 무결성도</span> 확인할 수 없습니다.</p></div>
   </section>
 
   <!-- 9 SONGDO 먹튀 -->
