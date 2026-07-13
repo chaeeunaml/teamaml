@@ -94,6 +94,9 @@
   .title-rule{width:0;height:2px;background:linear-gradient(90deg,transparent,var(--amber),transparent);margin:34px auto 0}
   .is-active .title-rule{animation:ruleGrow 1.3s ease 3.1s forwards}
   @keyframes ruleGrow{to{width:min(420px,70vw)}}
+  .title-credits{margin-top:22px;text-align:center;font-family:var(--mono);font-size:clamp(11px,1.3vw,14px);
+    letter-spacing:.28em;color:var(--muted);opacity:0;text-transform:uppercase}
+  .is-active .title-credits{animation:fadeIn 1.2s ease 3.6s forwards}
   .is-active #s-title{animation:flash .5s ease .2s}
   @keyframes flash{0%{background-color:#000}12%{filter:brightness(2.4)}18%{filter:brightness(.4)}30%{filter:brightness(1.6)}100%{filter:brightness(1)}}
 
@@ -488,6 +491,7 @@
     <div class="slam-wrap"><div class="slam">추적 <span class="six">6</span>분</div></div>
     <h1 class="title-main"><span class="rise r1">비인가 국제학교의</span><span class="rise r2"><span class="accent">자금세탁</span> 리스크</span></h1>
     <div class="title-rule"></div>
+    <div class="title-credits">김채은 · 나세경 · 박은지 · 정원경</div>
   </section>
 
   <!-- 2 MONITOR -->
