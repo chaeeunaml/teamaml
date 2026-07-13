@@ -95,8 +95,8 @@
   .title-rule{width:0;height:2px;background:linear-gradient(90deg,transparent,var(--amber),transparent);margin:34px auto 0}
   .is-active .title-rule{animation:ruleGrow 1.3s ease 3.1s forwards}
   @keyframes ruleGrow{to{width:min(420px,70vw)}}
-  .title-credits{margin-top:22px;text-align:center;font-family:var(--mono);font-size:clamp(11px,1.3vw,14px);
-    letter-spacing:.28em;color:var(--muted);opacity:0;text-transform:uppercase}
+  .title-credits{margin-top:22px;text-align:center;font-family:var(--mono);font-weight:700;font-size:clamp(13px,1.6vw,17px);
+    letter-spacing:.28em;color:var(--cold);opacity:0;text-transform:uppercase}
   .is-active .title-credits{animation:fadeIn 1.2s ease 3.6s forwards}
   .is-active #s-title{animation:flash .5s ease .2s}
   @keyframes flash{0%{background-color:#000}12%{filter:brightness(2.4)}18%{filter:brightness(.4)}30%{filter:brightness(1.6)}100%{filter:brightness(1)}}
@@ -258,7 +258,7 @@
   /* ---- chain (2x2 zigzag) ---- */
   .chain{display:grid;grid-template-columns:1fr auto 1fr;grid-template-rows:auto auto auto;
     grid-template-areas:"b1 r1 b2" ". . r2" "b4 r3 b3";
-    align-items:center;justify-items:center;column-gap:40px;row-gap:44px;width:min(96vw,1060px);margin:0 auto}
+    align-items:center;justify-items:center;column-gap:20px;row-gap:22px;width:min(96vw,1060px);margin:0 auto}
   .stage{width:clamp(250px,32vw,420px);border:1px solid var(--line);background:rgba(18,22,29,.6);
     padding:48px 36px;text-align:center;opacity:0;transform:translateY(18px) scale(.96);display:flex;flex-direction:column;justify-content:center}
   .is-active .stage{animation:stageIn .7s cubic-bezier(.2,.8,.2,1) forwards}
@@ -270,7 +270,7 @@
   .stage.dirty{border-color:var(--red)}.stage.dirty .ph{color:var(--red)}
   .stage.clean{border-color:var(--green)}.stage.clean .ph{color:var(--green)}.stage.clean .nm{color:var(--green)}
   .sg1{grid-area:b1}.sg2{grid-area:b2}.sg3{grid-area:b3}.sg4{grid-area:b4}
-  .chain-arrow{color:var(--line);font-size:28px;opacity:0}
+  .chain-arrow{color:var(--amber);font-size:40px;font-weight:700;text-shadow:0 0 18px rgba(232,176,75,.55);opacity:0}
   .ca1{grid-area:r1}.ca2{grid-area:r2}.ca3{grid-area:r3}
   .is-active .ca1{animation:fadeIn .5s ease 1.0s forwards}
   .is-active .ca2{animation:fadeIn .5s ease 1.7s forwards}
@@ -425,13 +425,28 @@
   .stat-num.warn{text-shadow:0 0 40px rgba(232,176,75,.55)}
   .stat-num.ok{text-shadow:0 0 40px rgba(111,168,199,.4)}
 
-  /* TITLE SLAM — 추적 6분! 퍽! */
+  /* TITLE SLAM — 추적 6분! 퍽! (추적60분 로고 오마주: 거친 질감 + 기울임 + 스탬프) */
   .slam-wrap{position:relative;z-index:3}
   .slam{font-family:var(--display);font-size:clamp(62px,15vw,190px);color:#f3f6fa;letter-spacing:-.02em;line-height:1;
-    text-shadow:0 10px 70px rgba(0,0,0,.85);opacity:0;transform:scale(3.4);filter:blur(9px)}
-  .slam .six{color:var(--red);text-shadow:0 0 46px rgba(194,91,79,.6)}
+    text-shadow:0 10px 70px rgba(0,0,0,.85);opacity:0;transform:scale(3.4) rotate(-3deg);filter:blur(9px);position:relative}
+  .slam .six{color:#f3f6fa}
   .is-active .slam{animation:slamIn .46s cubic-bezier(.15,.9,.25,1) .7s forwards}
-  @keyframes slamIn{0%{opacity:0;transform:scale(3.4);filter:blur(9px)}55%{opacity:1}100%{opacity:1;transform:scale(1);filter:blur(0)}}
+  @keyframes slamIn{0%{opacity:0;transform:scale(3.4) rotate(-3deg);filter:blur(9px)}55%{opacity:1}100%{opacity:1;transform:scale(1) rotate(-3deg);filter:blur(0)}}
+  .slam::after{content:"";position:absolute;inset:-6% -3%;pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='gtx'><feTurbulence type='turbulence' baseFrequency='1.3' numOctaves='4' stitchTiles='stitch'/></filter><rect width='140' height='140' filter='url(%23gtx)'/></svg>");
+    background-size:64px 64px;mix-blend-mode:overlay;opacity:0;
+    -webkit-mask-image:radial-gradient(ellipse at center,#000 45%,transparent 88%);
+    mask-image:radial-gradient(ellipse at center,#000 45%,transparent 88%)}
+  .is-active .slam::after{animation:grainIn 1s ease 1.15s forwards}
+  @keyframes grainIn{to{opacity:.6}}
+  .slam-badge{position:absolute;top:-8%;right:8%;font-family:var(--serif);font-style:italic;font-weight:700;
+    font-size:clamp(11px,1.4vw,16px);color:#f3f6fa;letter-spacing:.05em;border:1.5px solid rgba(243,246,250,.7);
+    padding:2px 10px;border-radius:2px;transform:rotate(-8deg);opacity:0;z-index:4;
+    text-shadow:0 2px 10px rgba(0,0,0,.8)}
+  .is-active .slam-badge{animation:fadeIn 1s ease 1.35s forwards}
+  .slam-cam{position:absolute;left:-9vw;top:50%;transform:translateY(-50%);opacity:0;z-index:2;color:#aeb7c2}
+  .is-active .slam-cam{animation:fadeIn 1.2s ease 1.5s forwards}
+  @media (max-width:900px){.slam-cam{display:none}.slam-badge{right:2%}}
   .impact.is-active .slam-wrap{animation:shake .42s ease 1.02s}
   @keyframes shake{0%,100%{transform:translate(0,0)}15%{transform:translate(-7px,5px)}30%{transform:translate(7px,-6px)}45%{transform:translate(-5px,-4px)}60%{transform:translate(5px,4px)}75%{transform:translate(-3px,3px)}}
   .impact.is-active::after{content:"";position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:6;animation:hitflash .5s ease 1.0s}
@@ -503,7 +518,17 @@
   <!-- 1 TITLE -->
   <section class="scene impact" id="s-title" data-dur="5900">
     <div class="slam-ring"></div>
-    <div class="slam-wrap"><div class="slam">추적 <span class="six">6</span>분</div></div>
+    <div class="slam-wrap">
+      <svg class="slam-cam" viewBox="0 0 60 90" width="56" height="84" fill="currentColor">
+        <path d="M20,88 L20,58 M32,88 L32,58" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <path d="M13,58 Q26,42 39,58 L39,38 Q26,29 13,38 Z"/>
+        <circle cx="26" cy="17" r="9"/>
+        <rect x="2" y="24" width="21" height="14" rx="2"/>
+        <circle cx="9" cy="31" r="4" fill="#0a0c10"/>
+      </svg>
+      <div class="slam-badge">SINCE 2026</div>
+      <div class="slam">추적 <span class="six">6</span>분</div>
+    </div>
     <h1 class="title-main"><span class="rise r1">비인가 국제학교의</span><span class="rise r2"><span class="accent">자금세탁</span> 리스크</span></h1>
     <div class="title-rule"></div>
     <div class="title-credits">김채은 · 나세경 · 박은지 · 정원경</div>
