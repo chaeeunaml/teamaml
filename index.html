@@ -131,6 +131,12 @@
   .subs{bottom:14.5vh}
   /* pages 10-13: songdo, cayman, ofac, global */
   #s-songdo .subs,#s-cayman .subs,#s-ofac .subs,#s-global .subs{bottom:9.5vh}
+  /* these slides sit bright screenshot images right above the subtitle —
+     give the text its own dark plate so it never washes out against them */
+  #s-songdo .subs p,#s-cayman .subs p,#s-ofac .subs p,#s-global .subs p{
+    display:block;width:fit-content;background:rgba(4,6,9,.86);
+    border:1px solid rgba(255,255,255,.09);box-shadow:0 10px 34px rgba(0,0,0,.55);
+    padding:.32em .85em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
   /* ---- flow nodes ---- */
   .node{opacity:0}
